@@ -124,6 +124,10 @@ deploy();
 
 If you've cloned this repo, you can just run `deploy.ts` and it will work.
 
+### Next Steps
+
+Now that you can deploy expo apps to Freestyle, you'll probably want to deploy them to [custom domains](https://docs.freestyle.sh/Getting-Started/domains). To deploy to your own custom domains, you can use the UI in the [Freestyle dashboard](https://admin.freestyle.sh), and to start building self serve to deploy to your users domains you should check out [this guide](https://docs.freestyle.sh/Getting-Started/domains)
+
 ### Notes
 
 As it turns out, the `freestyle-sandboxes` doesn't work with older versions of node module resolution, I changed the `tsconfig.json` a little bit, adding the following lines to `compilerOptions` to make it work in my IDE
