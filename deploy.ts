@@ -8,10 +8,7 @@ const sandboxes = new FreestyleSandboxes({
 
 async function deploy() {
   const web = await sandboxes.deployWeb(
-    {
-      kind: "files",
-      files: prepareDirForDeploymentSync("."),
-    },
+    prepareDirForDeploymentSync("."),
     {
       entrypoint: "main.ts",
       // put whatever domains you want here
