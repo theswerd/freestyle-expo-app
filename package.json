@@ -31,7 +31,7 @@
     "expo-symbols": "~0.2.2",
     "expo-system-ui": "~4.0.8",
     "expo-web-browser": "~14.0.2",
-    "freestyle-sandboxes": "^0.0.32",
+    "freestyle-sandboxes": "^0.0.35",
     "freestyle-sh": "^0.4.26",
     "hono": "^4.7.5",
     "react": "18.3.1",
