@@ -7,11 +7,10 @@ const sandboxes = new FreestyleSandboxes({
 });
 
 async function deploy() {
-  sandboxes.createDomainVerificationRequest("heroui.com");
   const web = await sandboxes.deployWeb(prepareDirForDeploymentSync("."), {
     entrypoint: "main.ts",
     // put whatever domains you want here
-    domains: ["test.swerdlow.dev"],
+    domains: ["example.style.dev"],
   });
 
   console.log(

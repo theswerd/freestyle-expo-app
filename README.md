@@ -80,7 +80,7 @@ npx freestyle deploy --domain some.style.dev --web main.ts
 
 You can also deploy the app using the API.
 
-Get your API key from the [Freestyle dashboard](https://admin.freestyle.sh), and create a .env file with the following content:
+Get your API key from the [Freestyle dashboard](https://admin.freestyle.sh), and create a `.env` file with the following content:
 
 ```env
 FREESTYLE_API_KEY=your-api-key
@@ -95,8 +95,7 @@ npm i freestyle-sandboxes
 Now you need a script to deploy the app. This is an example script that deploys the app.
 
 ```ts
-import { Freestyle } from "freestyle-sandboxes";
-
+import "dotenv/config";
 import { FreestyleSandboxes } from "freestyle-sandboxes";
 import { prepareDirForDeploymentSync } from "freestyle-sandboxes/utils";
 
@@ -107,10 +106,7 @@ const sandboxes = new FreestyleSandboxes({
 
 async function deploy() {
   await sandboxes.deployWeb(
-    {
-      kind: "files",
-      files: prepareDirForDeploymentSync("."),
-    },
+    prepareDirForDeploymentSync("."),
     {
       entrypoint: "main.ts",
       // put whatever domains you want here
@@ -130,7 +126,7 @@ Now that you can deploy expo apps to Freestyle, you'll probably want to deploy t
 
 ### Notes
 
-As it turns out, the `freestyle-sandboxes` doesn't work with older versions of node module resolution, I changed the `tsconfig.json` a little bit, adding the following lines to `compilerOptions` to make it work in my IDE
+**IMPORTANT** As it turns out, the `freestyle-sandboxes` doesn't work with older versions of node module resolution, I changed the `tsconfig.json` a little bit, adding the following lines to `compilerOptions` to make it work in my IDE
 
 ```json
 "moduleResolution": "nodenext",
